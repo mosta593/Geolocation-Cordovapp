@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="./index.html">API</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./index2.html">Cámara</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./index3.html">Maps</a>
+    </li>
+
+  </ul>
+  <meta charset="UTF-8">
+  <title>APP CAMERA</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css" />
+
+
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 100%;
+      height: 20%;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      padding: 2px 16px;
+    }
+
+    p>audio,
+    p>video,
+    p>img {
+      max-width: 20%;
+    }
+  </style>
+</head>
+<div style="background-image: url('../img/fondoapp.png');">
+
+  <body>
+
+    <div class="app" style="display: none">
+
+
+      <h1>CAMCORDOVA</h1>
+      <div id="deviceready" class="blink">
+        <p class="event listening">Connecting to Device</p>
+        <p class="event received">Device is Ready</p>
+      </div>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+
+
+
+    <div class="card" style="text-align: center;">
+      <h3 style="text-align: center;">TOMAR FOTO</h3>
+      <div class="container" style="text-align: center;">
+
+        <button type="submit" id="cameraTakePicture">GO</button>
+      </div>
+      <h3 style="text-align: center;">GRABAR VIDEO</h3>
+
+      <div class="container" style="text-align: center;">
+
+        <button type="submit" id="cameraTakeVideo">GO</button>
+      </div>
+    </div>
+
+
+
+    <header>
+      <div class="div-1">
+        <h2 style="text-align: center;">REPRODUCTOR DE ARCHIVOS</h2>
+      </div>
+      <br>
+      <br>
+    </header>
+    <br>
+    <div class="div-1">
+      <main style="text-align: center;">
+        <form action="#" id="myform" enctype="multipart/form-data">
+          <label for="capture"></label>
+
+          <input type="file" id="capture" accept="image/*,video/*,audio/*" capture multiple />
+
+          <br />
+
+        </form>
+        <br>
+
+
+
+        <div style="background-image: url('../img/fondoapp.png');">
+
+          <img src="" id="img" width="300px" />
+        </div>
+
+        <div style="background-image: url('../img/fondoapp.png');">
+
+          <br><br><br>
+          <video src="" id="video" width="300px" controls></video>
+
+        </div>
+
+      </main>
+    </div>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', (ev) => {
+        let form = document.getElementById('myform');
+        //get the captured media file
+        let input = document.getElementById('capture');
+
+        input.addEventListener('change', (ev) => {
+          console.dir(input.files[0]);
+          if (input.files[0].type.indexOf("image/") > -1) {
+            let img = document.getElementById('img');
+            img.src = window.URL.createObjectURL(input.files[0]);
+          }
+          else if (input.files[0].type.indexOf("audio/") > -1) {
+            let audio = document.getElementById('audio');
+            audio.src = window.URL.createObjectURL(input.files[0]);
+          }
+          else if (input.files[0].type.indexOf("video/") > -1) {
+            let video = document.getElementById('video');
+            video.src = window.URL.createObjectURL(input.files[0]);
+          }
+
+
+        })
+
+      })
+    </script>
+
+
+  </body>
+</div>
+
+</html>

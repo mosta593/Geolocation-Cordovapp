@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css"
+  />
+  <head>
+    <ul class="nav">
+      
+      <li class="nav-item">
+        <a class="nav-link active" href="./index.html">API</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./index2.html">Cámara</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="./index3.html">Maps</a>
+      </li>
+    
+    </ul>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+        <nav class="navbar navbar-dark bg-primary mb-3">
+            <div class="container">
+                <a href="#" class="navbar-brand">APP CLIMA BY LUIS VILLACRES</a>
+            </div>
+        </nav>
+        <div class="container searchContainer">
+            <div class="search card card-body">
+                <h1>OBTENER CLIMA DE UNA LOCACIÓN 🌦</h1>
+                <p class="lead">INGRESA EL NOMBRE DE TU CIUDAD</p>
+                <input type="text" id="searchUser" class="form-control" placeholder="CIUDAD">
+            </div>
+            <br>
+            <div id="profile"></div>
+        </div>
+        <div class="container text-center mt-2">
+            <button class="btn btn-primary" id="submit">Submit</button>
+        </div>
+        
+        <div id="content">
+
+        </div>
+     
+  </body>
+  <script src="fetch.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</html>
